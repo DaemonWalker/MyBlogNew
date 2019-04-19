@@ -1,0 +1,10 @@
+﻿@if (Tags != null)
+{
+    foreach(var tag in Tags)
+    {
+        <a class="tag" href=@($"/tag/{tag}/")>@tag</a>
+    }
+}
+@functions{
+    [Parameter]List<string> Tags { get; set; }
+}

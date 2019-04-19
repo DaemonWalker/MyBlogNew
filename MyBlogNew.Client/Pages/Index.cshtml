@@ -1,0 +1,25 @@
+﻿@page "/"
+@inject HttpClient Http
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-sm-10">
+            <h1>Hello, world!</h1>
+
+            Welcome to your new app.
+
+            <SurveyPrompt Title="How is Blazor working for you?" />
+            @if (articleSummaries != null)
+            {
+                <ArticleList Summaries="@articleSummaries"></ArticleList>
+            }
+        </div>
+    </div>
+</div>
+@functions{
+    SortType sortType = SortType.Latest;
+    List<ArticleSummaryModel> articleSummaries;
+    protected override async Task OnInitAsync()
+    {
+        articleSummaries = await Http.GetJsonAsync<List<ArticleSummaryModel>>("/api/data/GetArcitalTitles?SortType=" + sortType);
+    }
+}
