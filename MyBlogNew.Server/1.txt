@@ -1,12 +1,4 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.ResponseCompression;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using MyBlogNew.Shared;
-using System.Linq;
-
+﻿<pre><code>
 namespace MyBlogNew.Server
 {
     public class Startup
@@ -43,7 +35,8 @@ namespace MyBlogNew.Server
                 routes.MapRoute(name: "default", template: "{controller}/{action}/{id?}");
             });
 
-            app.UseBlazor<Client.Startup>();
+            app.UseBlazor&lt;Client.Startup&gt;();
         }
     }
 }
+            </code></pre>

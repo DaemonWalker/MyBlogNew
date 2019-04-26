@@ -4,7 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using MyBlogNew.Data;
 using MyBlogNew.Models;
+using MyBlogNew.Shared;
 
 namespace MyBlogNew.Server.Controllers
 {
@@ -14,12 +17,15 @@ namespace MyBlogNew.Server.Controllers
         [HttpGet("[action]")]
         public IActionResult GetArcitalTitles(SortType sortType)
         {
-            var list = new List<ArticleSummaryModel>()
-            {
-                new ArticleSummaryModel(){Title="第一篇博文",Href="/Artical.html?ID=1"},
-                new ArticleSummaryModel(){Title="第二篇文章",Href="/Artical.html?ID=1"}
-            };
+            var list = DataBase.QueryLastestSixArticles();
             return new JsonResult(list);
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetShareWays()
+        {
+            var list = Config.Configuration.GetSection("ShareModels").Get<List<Models.ShareModel>>();
+            return Json(list);
         }
     }
 }

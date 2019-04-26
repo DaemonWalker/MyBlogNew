@@ -19,10 +19,19 @@
 </div>
 @functions{
     private string tagName;
-    [Parameter] string TagName { get => tagName; set => tagName = value.UrlDecode(); }
-    List<ArticleSummaryModel> titles;
-    protected override async Task OnInitAsync()
+    [Parameter]
+    string TagName
     {
-        titles = await Http.PutJsonAsync<List<ArticleSummaryModel>>("/api/tag/getinfo", new { tagName = TagName });
+        get => tagName;
+        set => tagName = value.UrlDecode();
+    }
+    List<ArticleSummaryModel> titles;
+    protected override async Task OnParametersSetAsync()
+    {
+        await LoadSummaries();
+    }
+    async Task LoadSummaries()
+    {
+        titles = await Http.PutJsonAsync<List<ArticleSummaryModel>>("/api/tag/getinfo", TagName);
     }
 }

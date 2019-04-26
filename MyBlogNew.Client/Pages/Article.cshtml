@@ -1,4 +1,28 @@
-﻿@page "/Article/{articleName}";
-@functions{
+﻿@page "/Article/{ArticleName}";
+@inject IJSRuntime JSRuntime
+@inject HttpClient Http
+<div class="container article-Content">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            @if (articleContent != null)
+            {
+                <h3>@articleContent.Title</h3>
+                @((MarkupString)articleContent.Content)
+            }
+        </div>
+    </div>
+</div>
 
+<ArticleTail Title="@ArticleName"></ArticleTail>
+@functions{
+    [Parameter] string ArticleName { get; set; }
+    ArticleModel articleContent;
+    protected override async Task OnInitAsync()
+    {
+        articleContent = await Http.PostJsonAsync<ArticleModel>("/api/article/getarticle", ArticleName);
+    }
+    protected override async Task OnAfterRenderAsync()
+    {
+        await JSRuntime.InvokeAsync<Task>("loadHighlight.load");
+    }
 }

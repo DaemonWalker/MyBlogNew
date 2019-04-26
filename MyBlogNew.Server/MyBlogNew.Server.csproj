@@ -24,8 +24,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyBlogNew.Client\MyBlogNew.Client.csproj" />
+    <ProjectReference Include="..\MyBlogNew.Data\MyBlogNew.Data.csproj" />
     <ProjectReference Include="..\MyBlogNew.Models\MyBlogNew.Models.csproj" />
     <ProjectReference Include="..\MyBlogNew.Shared\MyBlogNew.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

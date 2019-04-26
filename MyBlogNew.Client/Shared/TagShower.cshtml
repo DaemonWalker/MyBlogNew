@@ -1,10 +1,10 @@
 ﻿@if (Tags != null)
 {
-    foreach(var tag in Tags)
+    foreach (var tag in Tags)
     {
-        <a class="tag" href=@($"/tag/{tag}/")>@tag</a>
+        <a class="tag" href=@($"/tag/{tag.Name}/")>@tag.Name</a>
     }
 }
 @functions{
-    [Parameter]List<string> Tags { get; set; }
+    [Parameter] List<TagModel> Tags { get; set; }
 }

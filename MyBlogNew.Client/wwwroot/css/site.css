@@ -158,16 +158,100 @@ time {
     color: gray;
 }
 
-    time::after {
-        content: "|";
-        display: inline-block;
-        margin: 0 10px;
-    }
+img {
+    width: 100%
+}
+
+time::after {
+    content: "|";
+    display: inline-block;
+    margin: 0 10px;
+}
 
 body {
-    font-family: Georgia, Cambria, "Times New Roman", BlinkMacSystemFont, -apple-system, Times, serif;
+    font-family: 'Lucida Console', 幼圆, Georgia, Cambria, "Times New Roman", BlinkMacSystemFont, -apple-system, Times, serif;
 }
 
 .articleSummary {
     margin: 20px 0 30px 0;
 }
+
+.articleTail {
+}
+
+    .articleTail * {
+        margin: 0.6em 0;
+    }
+
+    .articleTail img {
+        width: 60px
+    }
+
+    .articleTail a:hover {
+        color: lightslategray;
+        text-decoration: none;
+    }
+
+    .articleTail .describe {
+        font-size: 0.9em;
+        line-height: 1.44em;
+    }
+
+    .articleTail .head {
+        border-radius: 1000px
+    }
+
+::-webkit-scrollbar {
+    width: 0.6em;
+    height: 0.6em
+}
+
+::-webkit-scrollbar-button {
+    background: #ccc;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background: #F0F0F0
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightslategray;
+    border-radius: 5px;
+}
+
+.article-Content {
+}
+
+    .article-Content p {
+        margin: 0;
+        color: darkgray
+    }
+
+    .article-Content h6 {
+        margin: 20px 0;
+        font-weight: 900;
+        font-size: 1.5em
+    }
+
+    .article-Content p {
+        line-height: 30px;
+    }
+
+    .article-Content pre {
+        background-color: #F0F0F0;
+        padding: 0 10px;
+        max-height: 400px;
+        overflow: auto;
+        position: relative;
+        margin: 0
+    }
+
+    .article-Content code {
+        background-color: #F0F0F0;
+    }
+
+    .article-Content text {
+        margin: 0;
+        color: darkgray
+    }

@@ -19,9 +19,12 @@ namespace MyBlogNew.Models
         public string Summary { get; set; }
 
         [DataMember]
-        public List<string> Tags { get; set; }
+        public List<TagModel> Tags { get; set; }
 
         [DataMember]
         public string Href { get; set; }
+
+        [DataMember]
+        public string TitleEn { get; set; }
     }
 }
