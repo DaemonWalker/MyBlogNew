@@ -255,3 +255,7 @@ body {
         margin: 0;
         color: darkgray
     }
+
+    .article-Content .tail {
+        padding-top: 30px
+    }
