@@ -32,6 +32,6 @@
     }
     async Task LoadSummaries()
     {
-        titles = await Http.PutJsonAsync<List<ArticleSummaryModel>>("/api/tag/getinfo", TagName);
+        titles = await Http.PutJsonAsync<List<ArticleSummaryModel>>("api/tag/getinfo", TagName);
     }
 }

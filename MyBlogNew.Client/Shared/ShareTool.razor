@@ -1,4 +1,4 @@
-﻿@inject Microsoft.AspNetCore.Components.Services.IUriHelper UriHelper
+﻿@inject Microsoft.AspNetCore.Components.IUriHelper UriHelper
 <a href="@(string.Format(Info.Link,UriHelper.GetAbsoluteUri(),Title))" title="@Info.Describe" class="@Class"><img src="@Info.ImgPath" /></a>
 @functions{
     [Parameter] ShareModel Info { get; set; }

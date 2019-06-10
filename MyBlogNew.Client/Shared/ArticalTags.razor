@@ -17,6 +17,6 @@
     List<TagModel> tags;
     protected override async Task OnInitAsync()
     {
-        tags = await Http.GetJsonAsync<List<TagModel>>("/Api/Tag/GetTags");
+        tags = await Http.GetJsonAsync<List<TagModel>>("Api/Tag/GetTags");
     }
 }

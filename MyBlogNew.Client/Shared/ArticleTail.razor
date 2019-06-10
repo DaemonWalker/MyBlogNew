@@ -5,7 +5,7 @@
         <div class="col-md">
             <img src="/images/about.jpg" class="head" /> Daemon Walker
             <div><a href="">GitHub</a></div>
-            <p class="describe">忠实的软狗</p>
+            <p class="describe">忠实的软狗，半吊子.Net程序员</p>
         </div>
         <div class="col-md">
             <h4>Share this Post</h4>
@@ -25,6 +25,6 @@
     List<ShareModel> shareModels;
     protected override async Task OnInitAsync()
     {
-        shareModels = await Http.GetJsonAsync<List<ShareModel>>("/Api/Data/GetShareWays");
+        shareModels = await Http.GetJsonAsync<List<ShareModel>>("Api/Data/GetShareWays");
     }
 }

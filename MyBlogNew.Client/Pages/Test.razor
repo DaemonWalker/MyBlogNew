@@ -1,0 +1,16 @@
+﻿@using System.Net.NetworkInformation
+@page "/Test.html"
+<div class="container">
+    @str
+</div>
+@functions{
+    string str;
+    override protected void OnInit()
+    {
+        NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
+        foreach (var i in interfaces)
+        {
+            str += BitConverter.ToString(i.GetPhysicalAddress().GetAddressBytes());
+        }
+    }
+}

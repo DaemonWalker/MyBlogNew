@@ -3,7 +3,7 @@
 @inject HttpClient Http
 <div class="container article-Content">
     <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-md-8 col-sm-10 col-xs-12">
             @if (articleContent != null)
             {
                 <h3>@articleContent.Title</h3>
@@ -19,7 +19,7 @@
     ArticleModel articleContent;
     protected override async Task OnInitAsync()
     {
-        articleContent = await Http.PostJsonAsync<ArticleModel>("/api/article/getarticle", ArticleName);
+        articleContent = await Http.PostJsonAsync<ArticleModel>("api/article/getarticle", ArticleName);
     }
     protected override async Task OnAfterRenderAsync()
     {

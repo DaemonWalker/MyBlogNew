@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlogNew.Shared", "MyBlogN
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlogNew.Models", "MyBlogNew.Models\MyBlogNew.Models.csproj", "{1364A6AF-FCEF-4354-999A-AA00CD026244}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBlogNew.Data", "MyBlogNew.Data\MyBlogNew.Data.csproj", "{E2A2CC87-07F0-4E72-AC80-0A1375FDFBE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlogNew.Data", "MyBlogNew.Data\MyBlogNew.Data.csproj", "{E2A2CC87-07F0-4E72-AC80-0A1375FDFBE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
